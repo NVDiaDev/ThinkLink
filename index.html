@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>ThinkLink</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f4f6fb;
+        }
+
+        /* Layout */
+        .app {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Menu */
+        .menu {
+            width: 220px;
+            background: #2d3a4b;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .menu h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .menu button {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            background: none;
+            color: #fff;
+            text-align: left;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .menu button:hover,
+        .menu button.active {
+            background: #44566c;
+        }
+
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .module {
+            display: none;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .module.active {
+            display: block;
+        }
+
+        /* Quote */
+        .quote {
+            font-size: 22px;
+            line-height: 1.7;
+            font-style: italic;
+            border-left: 5px solid #667eea;
+            padding-left: 20px;
+			margin-bottom: 30px;
+        }
+
+        .quote strong {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+       .link-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.link-row .label {
+    font-weight: 600;
+}
+
+.link-row a {
+    color: #667eea;
+    text-decoration: underline;
+}
+
+.link-row a:hover {
+    color: #764ba2;
+}
+
+		
+		
+    </style>
+</head>
+<body>
+
+<div class="app">
+
+    <!-- MENU -->
+    <div class="menu">
+        <h2>ThinkLink</h2>
+        <button class="active" onclick="showModule('quote')">📖 Châm ngôn</button>
+        <button onclick="showModule('link')">🔗 Link lưu</button>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- MODULE: CHÂM NGÔN -->
+		<div id="quote" class="module active">
+    <div class="quote">
+        <strong>“Nghĩ đến ngày 20/12/2025”</strong>
+        Người thành công và bản lĩnh phải làm được những điều mà nhiều người vẫn làm.
+    </div>
+	
+    <div class="quote">
+        <strong>“Hãy duy trì sự bận rộn bởi đó là liều thuốc rẻ nhất”</strong>
+        1. Rảnh rỗi là mảnh đất màu mỡ của lo âu.<br>
+        2. Bận rộn đúng cách là cách con người tự kéo mình ra khỏi trạng thái sa sút<br>
+        3. Hành động là cách nhanh nhất để vượt qua khủng hoảng nội tâm.
+    </div>
+
+    <div class="quote">
+        <strong>“Đường dài mới biết ngựa hay”</strong>
+        Đôi khi, thành công không nằm ở lúc bạn “rực sáng”
+        mà nằm ở khoảnh khắc bạn không bỏ cuộc
+        khi chẳng còn động lực!
+    </div>
+
+</div>
+
+
+        <!-- MODULE: LINK -->
+        <div id="link" class="module">
+
+    <div class="link-row">
+        <span class="label">Tập cẳng tay:</span>
+        <a href="https://www.facebook.com/share/r/1K1K6tKVdZ/" target="_blank">
+            Xem video
+        </a>
+    </div>
+
+    <div class="link-row">
+        <span class="label">Lưng thẳng ko tạ:</span>
+        <a href="https://www.facebook.com/reel/1331657288699383" target="_blank">
+            Xem video
+        </a>
+    </div>
+
+</div>
+
+    </div>
+</div>
+
+<script>
+    function showModule(id) {
+        document.querySelectorAll('.module').forEach(m => m.classList.remove('active'));
+        document.querySelectorAll('.menu button').forEach(b => b.classList.remove('active'));
+
+        document.getElementById(id).classList.add('active');
+        event.target.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
